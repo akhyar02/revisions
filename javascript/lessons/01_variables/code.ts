@@ -2,7 +2,7 @@
 /* eslint-disable no-var */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { log } from "../utils/logger";
+import { log } from "utils/logger";
 
 // Var / Let / Const
 var sameName = 1;
