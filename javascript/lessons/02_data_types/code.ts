@@ -1,7 +1,8 @@
+// @ts-nocheck
 import { log } from "utils/logger";
 
 // #NUMBER
-// Defining integer and float variables
+// Defining integer and float constiables
 const integerNumber = 42;
 const floatNumber = 3.1416;
 
@@ -106,7 +107,7 @@ function add(a: number, b: number) {
   return a + b;
 }
 
-// Call the function and store the result in a variable
+// Call the function and store the result in a constiable
 const sumFn = add(5, 3);
 log(sumFn); // Output: 8
 
@@ -178,7 +179,7 @@ delete user.age;
 // Creating a property with a multiword name using square brackets
 user["likes birds"] = true;
 
-// Dynamic property access using a variable
+// Dynamic property access using a constiable
 const key = "isAdmin";
 user[key] = true;
 
@@ -263,7 +264,7 @@ function checkProperty(o, prop) {
 }
 
 // Property assignment rules and edge cases
-const o = {};
+let o = {};
 Object.defineProperty(o, "readOnly", {
   value: 0,
   writable: false,
@@ -292,3 +293,89 @@ console.log(o.hasOwnProperty("x")); // true
 console.log(o.hasOwnProperty("nonWritable")); // true
 
 // Note: [[Prototype]] is a conceptual feature for explanation. Actual implementations may consty.
+// code.js
+
+// Prototype and the 'in' Operator
+
+// The 'in' operator is used to check if a property is a direct or inherited property of an object.
+// It searches through the prototype chain of the object to find the property.
+
+// Example usage of the 'in' operator
+const proto = { y: 0 };
+o = Object.create(proto);
+o.x = 0;
+
+console.log("x" in o); // true - x is an own property of o
+console.log("y" in o); // true - y is an inherited property from proto
+console.log("hasOwnProperty" in o); // true - inherited from Object.prototype
+console.log("nonExistent" in o); // false - nonExistent is not a property of o
+
+// Prototype Property in JavaScript
+
+// Constructor functions in JavaScript use the prototype property.
+// It's important to understand that F.prototype is the prototype for instances created by F, not for the function F itself.
+
+// Example with a Point constructor
+function Point2(x = 0, y = 0) {
+  this.x = x;
+  this.y = y;
+}
+
+// Adding a method to the Point prototype
+Point2.prototype.setTo = function (x, y) {
+  this.x = x;
+  this.y = y;
+};
+
+// Prototypal Inheritance in JavaScript
+
+// JavaScript's prototypal inheritance allows one object to inherit from another.
+// This creates a flexible and dynamic inheritance hierarchy.
+
+// Emulating Class-Subclass Inheritance
+
+// Constructor functions can act like classes in JavaScript.
+// Subclasses can inherit methods and properties from a superclass.
+
+// Example with Shape and Rect classes
+function Shape(x, y, fill) {
+  // Shape constructor
+}
+
+Shape.prototype.move = function () {
+  // move method
+};
+
+Shape.prototype.delete = function () {
+  // delete method
+};
+
+function Rect(x, y, width, height, fill) {
+  Shape.call(this, x, y, fill);
+  this.width = width;
+  this.height = height;
+}
+
+// Establishing inheritance
+Rect.prototype = Object.create(Shape.prototype);
+Rect.prototype.constructor = Rect;
+
+// Creating an instance of Rect
+const r1 = new Rect(20, 50, 100, 200, "blue");
+
+// Accessing methods from Shape
+r1.move();
+r1.delete();
+
+// Retrieving and Setting an Object's Prototype
+
+// Determining an object's prototype
+const arrProto = Object.getPrototypeOf([1, 2, 3]); // returns Array.prototype
+
+// Changing an object's prototype
+a = {};
+b = {};
+Object.setPrototypeOf(b, a); // sets a as the prototype of b
+
+// Note: Altering the prototype of an object can lead to performance issues.
+// It is generally recommended to use Object.create() for new objects.
