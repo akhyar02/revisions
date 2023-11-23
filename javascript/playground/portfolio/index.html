@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khairul Akhyar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .plane {
+        width: 100%;
+
+        height: 100%;
+
+        position: absolute;
+      }
+      .plane img {
+        position: absolute;
+      }
+
+      .plane:nth-of-type(1) {
+        filter: brightness(0.7);
+      }
+
+      .plane:nth-of-type(1) img:nth-of-type(1) {
+        left: 40%;
+
+        top: 28%;
+      }
+
+      .plane:nth-of-type(1) img:nth-of-type(2) {
+        left: 5%;
+
+        top: 55%;
+      }
+
+      .plane:nth-of-type(1) img:nth-of-type(3) {
+        left: 70%;
+
+        top: 40%;
+      }
+
+      .plane:nth-of-type(2) {
+        filter: brightness(0.6);
+      }
+
+      .plane:nth-of-type(2) img:nth-of-type(1) {
+        left: 10%;
+
+        top: 20%;
+      }
+
+      .plane:nth-of-type(2) img:nth-of-type(2) {
+        left: 45%;
+
+        top: 5%;
+      }
+
+      .plane:nth-of-type(2) img:nth-of-type(3) {
+        left: 55%;
+
+        top: 60%;
+      }
+
+      .plane:nth-of-type(3) {
+        filter: brightness(0.5);
+      }
+
+      .plane:nth-of-type(3) img:nth-of-type(1) {
+        left: 70%;
+
+        top: 20%;
+      }
+
+      .plane:nth-of-type(3) img:nth-of-type(2) {
+        left: 40%;
+
+        top: 75%;
+      }
+
+      .plane:nth-of-type(3) img:nth-of-type(3) {
+        left: 20%;
+
+        top: 40%;
+      }
+
+      .plane:nth-of-type(4) {
+        filter: brightness(0.4);
+      }
+
+      .plane:nth-of-type(4) img:nth-of-type(1) {
+        left: 10%;
+
+        top: 0%;
+      }
+
+      .plane:nth-of-type(4) img:nth-of-type(2) {
+        left: 80%;
+
+        top: 0%;
+      }
+
+      .plane:nth-of-type(4) img:nth-of-type(3) {
+        left: 10%;
+
+        top: 70%;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 100%, 0);
+        }
+
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      .reveal {
+        animation-name: fadeInUp;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+    </style>
+  </head>
+  <body class="relative flex flex-col min-h-screen">
+    <div class="fixed top-0 left-0 z-[-1] grid w-screen h-screen grid-cols-12">
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+      <div class="border-r-2 border-r-neutral-300"></div>
+    </div>
+    <header
+      class="relative z-10 flex justify-center py-4 text-white bg-gray-800"
+    >
+      <div class="flex items-center justify-between w-10/12">
+        <h1 class="text-3xl font-bold">Your Name</h1>
+        <nav>
+          <ul class="flex justify-end gap-4">
+            <li><a href="#about" class="hover:text-gray-300">About</a></li>
+            <li>
+              <a href="#projects" class="hover:text-gray-300">Projects</a>
+            </li>
+            <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="relative flex flex-col items-center flex-1">
+      <section id="about" class="py-8 flex h-[calc(100vh-64px)] w-5/6">
+        <div class="relative w-1/2">
+          <div
+            class="absolute left-0 -translate-y-1/2 top-1/4"
+            id="about__content"
+          >
+            <h2 class="mb-4 font-bold text-7xl">HI!</h2>
+            <h3 class="mb-4 text-5xl font-bold">
+              I&apos;m Akhyar &#183; I build stuffs
+            </h3>
+            <p class="font-mono text-2xl">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Asperiores perspiciatis numquam laudantium necessitatibus debitis,
+              doloribus quibusdam sed nulla similique quis.
+            </p>
+          </div>
+        </div>
+        <div class="relative grid w-1/2">
+          <div class="plane hero__images-float" id="hero__images-plane1">
+            <img
+              src="https://cdn.svgporn.com/logos/html-5.svg"
+              alt="HTML5"
+              class="w-28 h-28"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/css-3.svg"
+              alt="CSS3"
+              class="w-28 h-28"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/javascript.svg"
+              alt="JavaScript"
+              class="w-28 h-28"
+            />
+          </div>
+          <div class="plane" id="hero__images-plane2">
+            <img
+              src="https://cdn.svgporn.com/logos/php.svg"
+              alt="PHP"
+              class="w-28 h-28"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/laravel.svg"
+              alt="Laravel"
+              class="w-28 h-28"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/tailwindcss-icon.svg"
+              alt="Tailwind CSS"
+              class="w-28 h-28"
+            />
+          </div>
+
+          <div class="plane" id="hero__images-plane3">
+            <img
+              src="https://cdn.svgporn.com/logos/vue.svg"
+              alt="Vue"
+              class="w-28 h-28"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/nuxt-icon.svg"
+              alt="Nuxt"
+              class="w-28 h-28"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/react.svg"
+              alt="React"
+              class="w-28 h-28"
+            />
+          </div>
+
+          <div class="plane" id="hero__images-plane4">
+            <img
+              src="https://cdn.svgporn.com/logos/nextjs-icon.svg"
+              alt="Next.js"
+              class="w-28 h-28"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/nodejs-icon.svg"
+              alt="Node.js"
+              class="w-28 h-28"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/express.svg"
+              alt="Express"
+              class="w-28 h-28"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="flex flex-col items-center justify-center py-8"
+      >
+        <ul class="flex gap-36">
+          <li>Projects</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+        <div class="container mx-auto">
+          <h2 class="mb-4 text-2xl font-bold">Projects</h2>
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div class="p-4 bg-white rounded shadow">
+              <h3 class="text-xl font-bold">Project Name</h3>
+              <p>Project description...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="py-8">
+        <div class="container mx-auto">
+          <h2 class="mb-4 text-2xl font-bold">Contact Me</h2>
+          <p>How people can reach you...</p>
+        </div>
+      </section>
+    </main>
+    <footer class="p-4 text-center text-white bg-gray-800">
+      <p>&copy; 2023 Your Name. All Rights Reserved.</p>
+    </footer>
+  </body>
+
+  <script>
+    let requestAnimationFrameId = null;
+
+    let xForce = 0;
+
+    let yForce = 0;
+
+    const easing = 0.08;
+
+    const speed = 0.01;
+
+    const manageMouseMove = (e) => {
+      const { movementX, movementY } = e;
+
+      xForce += movementX * speed;
+
+      yForce += movementY * speed;
+
+      if (requestAnimationFrameId == null) {
+        requestAnimationFrameId = window.requestAnimationFrame(animate);
+      }
+    };
+
+    const lerp = (start, target, amount) =>
+      start * (1 - amount) + target * amount;
+
+    const animate = () => {
+      xForce = lerp(xForce, 0, easing);
+      yForce = lerp(yForce, 0, easing);
+
+      document.getElementById(
+        "hero__images-plane1"
+      ).style.transform = `translate(${xForce}px, ${yForce}px)`;
+
+      document.getElementById(
+        "hero__images-plane2"
+      ).style.transform = `translate(${xForce * 0.5}px, ${yForce * 0.5}px)`;
+
+      document.getElementById(
+        "hero__images-plane3"
+      ).style.transform = `translate(${xForce * 0.25}px, ${yForce * 0.25}px)`;
+
+      document.getElementById(
+        "hero__images-plane4"
+      ).style.transform = `translate(${xForce * 0.125}px, ${yForce * 0.125}px)`;
+
+      if (Math.abs(xForce) < 0.01) xForce = 0;
+
+      if (Math.abs(yForce) < 0.01) yForce = 0;
+
+      if (xForce != 0 || yForce != 0) {
+        cancelAnimationFrame(requestAnimationFrameId);
+        requestAnimationFrameId = null;
+
+        requestAnimationFrame(animate);
+      } else {
+        cancelAnimationFrame(requestAnimationFrameId);
+
+        requestAnimationFrameId = null;
+
+        idleAnimation();
+      }
+    };
+
+    const idleAnimation = () => {
+      const time = Date.now() * 0.002; // Slow down the time factor for smoothness
+
+      const images = document.querySelectorAll(".plane img");
+
+      images.forEach((image, index) => {
+        image.style.transform = `translateY(${
+          Math.sin(time + index) * 4
+        }px) rotate(${Math.sin(time + index) * 2}deg)`;
+      });
+
+      requestAnimationFrameId = window.requestAnimationFrame(idleAnimation);
+    };
+
+    // document.addEventListener("DOMContentLoaded", idleAnimation);
+    document.addEventListener("DOMContentLoaded", () => {
+      const element = document.querySelector("#about__content");
+
+      function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      function checkVisibility() {
+        if (isInViewport(element)) {
+          element.classList.add("reveal");
+        }
+      }
+
+      window.addEventListener("scroll", checkVisibility);
+      checkVisibility(); // Initial check
+    });
+  </script>
+</html>
